@@ -52,7 +52,7 @@ Exceptions: `RunpodAuthenticationError`,
 ## Module Layout
 
 ```
-source/packages/automojo/interop/runpod/
+source/packages/automojo/restclient/runpod/
 ├── runpodclient.py
 ├── aspectsrunpod.py
 ├── apigroups/

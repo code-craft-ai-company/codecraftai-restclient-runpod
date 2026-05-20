@@ -1,8 +1,8 @@
 =========================================
-Automation Mojo Interop - RunPod
+Automation Mojo Rest Client - RunPod
 =========================================
 
-The ``automojo-interop-runpod`` package is the venue-specific REST client for RunPod, a
+The ``automojo-restclient-runpod`` package is the venue-specific REST client for RunPod, a
 GPU cloud whose primary unit of provisioning is the container *pod* rather than the VM.
 The provider exposes secure-cloud and community-cloud capacity tiers, pod templates,
 GPU-type and region catalogs, persistent network volumes, and a small lifecycle surface
@@ -23,8 +23,8 @@ Repository Structure
 
 - ``development/`` - Runtime environment scripts.
 - ``repository-setup/`` - Repository homing and setup scripts.
-- ``source/packages/automojo/interop/runpod/`` - Package source code.
-- ``source/testroots/testbase/automojo/tests/interop/runpod/`` - TestBase test roots.
+- ``source/packages/automojo/restclient/runpod/`` - Package source code.
+- ``source/testroots/testbase/automojo/tests/restclient/runpod/`` - TestBase test roots.
 - ``specs/`` - Requirements, design, and task documentation (Kiro-style).
 - ``userguide/`` - Standards, conventions, and documentation.
 

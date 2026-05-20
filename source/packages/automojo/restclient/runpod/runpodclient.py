@@ -27,38 +27,38 @@ from automojo.credentials.runpodapikeycredential import RunpodApiKeyCredential
 
 from automojo.restclient.base.restclientbase import RestClientBase
 
-from automojo.interop.runpod.aspectsrunpod import (
+from automojo.restclient.runpod.aspectsrunpod import (
     AspectsRunpod, DEFAULT_RUNPOD_ASPECTS
 )
-from automojo.interop.runpod.apigroups.gputypesgroup import GpuTypesGroup
-from automojo.interop.runpod.apigroups.datacentersgroup import DataCentersGroup
-from automojo.interop.runpod.apigroups.podtemplatesgroup import (
+from automojo.restclient.runpod.apigroups.gputypesgroup import GpuTypesGroup
+from automojo.restclient.runpod.apigroups.datacentersgroup import DataCentersGroup
+from automojo.restclient.runpod.apigroups.podtemplatesgroup import (
     PodTemplatesGroup
 )
-from automojo.interop.runpod.apigroups.networkvolumesgroup import (
+from automojo.restclient.runpod.apigroups.networkvolumesgroup import (
     NetworkVolumesGroup
 )
-from automojo.interop.runpod.apigroups.podsgroup import PodsGroup
-from automojo.interop.runpod.apigroups.tagsgroup import TagsGroup
-from automojo.interop.runpod.exceptions.runpoderrors import (
+from automojo.restclient.runpod.apigroups.podsgroup import PodsGroup
+from automojo.restclient.runpod.apigroups.tagsgroup import TagsGroup
+from automojo.restclient.runpod.exceptions.runpoderrors import (
     RunpodAcceleratorNotAvailableError, RunpodCapacityUnavailableError,
     RunpodPodFailedError
 )
-from automojo.interop.runpod.enums.runpodcloudtype import RunpodCloudType
-from automojo.interop.runpod.model.runpodgputype import RunpodGpuType
-from automojo.interop.runpod.model.runpoddatacenter import RunpodDataCenter
-from automojo.interop.runpod.model.runpodpodtemplate import RunpodPodTemplate
-from automojo.interop.runpod.model.runpodnetworkvolume import (
+from automojo.restclient.runpod.enums.runpodcloudtype import RunpodCloudType
+from automojo.restclient.runpod.model.runpodgputype import RunpodGpuType
+from automojo.restclient.runpod.model.runpoddatacenter import RunpodDataCenter
+from automojo.restclient.runpod.model.runpodpodtemplate import RunpodPodTemplate
+from automojo.restclient.runpod.model.runpodnetworkvolume import (
     RunpodNetworkVolume
 )
-from automojo.interop.runpod.model.runpodpod import RunpodPod
-from automojo.interop.runpod.specs.runpodpodtemplatespec import (
+from automojo.restclient.runpod.model.runpodpod import RunpodPod
+from automojo.restclient.runpod.specs.runpodpodtemplatespec import (
     RunpodPodTemplateSpec
 )
-from automojo.interop.runpod.specs.runpodnetworkvolumespec import (
+from automojo.restclient.runpod.specs.runpodnetworkvolumespec import (
     RunpodNetworkVolumeSpec
 )
-from automojo.interop.runpod.specs.runpodpodlaunchspec import (
+from automojo.restclient.runpod.specs.runpodpodlaunchspec import (
     RunpodPodLaunchSpec
 )
 

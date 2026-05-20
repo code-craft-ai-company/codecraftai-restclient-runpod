@@ -19,12 +19,12 @@ from automojo.errors.exceptions import ConfigurationError
 from automojo.credentials.basiccredential import BasicCredential
 from automojo.credentials.runpodapikeycredential import RunpodApiKeyCredential
 
-from automojo.interop.runpod.runpodclient import RunpodClient
-from automojo.interop.runpod.exceptions.runpoderrors import (
+from automojo.restclient.runpod.runpodclient import RunpodClient
+from automojo.restclient.runpod.exceptions.runpoderrors import (
     RunpodAuthenticationError
 )
 
-from automojo.tests.interop.runpod.testsupport import (
+from automojo.tests.restclient.runpod.testsupport import (
     BASE_URL, make_client, make_credential
 )
 

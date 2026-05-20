@@ -18,16 +18,16 @@ from automojo.errors.exceptions import SemanticError
 
 from automojo.restclient.base.restapigroup import RestApiGroup
 
-from automojo.interop.runpod.aspectsrunpod import (
+from automojo.restclient.runpod.aspectsrunpod import (
     AspectsRunpod, DEFAULT_RUNPOD_ASPECTS
 )
-from automojo.interop.runpod.apigroups.groupsupport import (
+from automojo.restclient.runpod.apigroups.groupsupport import (
     iter_cursor_pages, raise_for_status, safe_json
 )
-from automojo.interop.runpod.model.runpodnetworkvolume import (
+from automojo.restclient.runpod.model.runpodnetworkvolume import (
     RunpodNetworkVolume
 )
-from automojo.interop.runpod.specs.runpodnetworkvolumespec import (
+from automojo.restclient.runpod.specs.runpodnetworkvolumespec import (
     RunpodNetworkVolumeSpec
 )
 

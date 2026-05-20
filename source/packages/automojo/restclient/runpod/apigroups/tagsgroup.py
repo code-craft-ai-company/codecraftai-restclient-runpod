@@ -18,10 +18,10 @@ from automojo.errors.exceptions import SemanticError
 
 from automojo.restclient.base.restapigroup import RestApiGroup
 
-from automojo.interop.runpod.aspectsrunpod import (
+from automojo.restclient.runpod.aspectsrunpod import (
     AspectsRunpod, DEFAULT_RUNPOD_ASPECTS
 )
-from automojo.interop.runpod.apigroups.groupsupport import raise_for_status
+from automojo.restclient.runpod.apigroups.groupsupport import raise_for_status
 
 
 # Resource types the RunPod tag endpoint accepts as a path segment.

@@ -16,7 +16,7 @@ from typing import Any, Dict, List, Optional, Union
 
 from automojo.errors.exceptions import SemanticError
 
-from automojo.interop.runpod.enums.runpodcloudtype import RunpodCloudType
+from automojo.restclient.runpod.enums.runpodcloudtype import RunpodCloudType
 
 
 class RunpodPodLaunchSpec:

@@ -1,6 +1,6 @@
 [tool.poetry]
-name = "automojo-interop-runpod"
-description = "Automation Mojo - RunPod interop client"
+name = "automojo-restclient-runpod"
+description = "Automation Mojo - RunPod REST client"
 version = "0.0.1"
 authors = []
 readme = "README.rst"
@@ -13,7 +13,9 @@ classifiers = [
 keywords = [
     "python",
     "automation",
-    "automojo"
+    "automojo",
+    "restclient",
+    "runpod"
 ]
 packages = [{include="automojo", from="source/packages"}]
 

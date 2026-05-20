@@ -16,11 +16,11 @@ from typing import Any, Dict, List
 
 from automojo.restclient.base.restapigroup import RestApiGroup
 
-from automojo.interop.runpod.aspectsrunpod import (
+from automojo.restclient.runpod.aspectsrunpod import (
     AspectsRunpod, DEFAULT_RUNPOD_ASPECTS
 )
-from automojo.interop.runpod.apigroups.groupsupport import raise_for_status
-from automojo.interop.runpod.model.runpodgputype import RunpodGpuType
+from automojo.restclient.runpod.apigroups.groupsupport import raise_for_status
+from automojo.restclient.runpod.model.runpodgputype import RunpodGpuType
 
 
 class GpuTypesGroup(RestApiGroup):

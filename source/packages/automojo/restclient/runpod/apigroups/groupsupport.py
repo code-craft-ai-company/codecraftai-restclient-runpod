@@ -22,7 +22,7 @@ from requests import Response
 
 from automojo.errors.exceptions import SemanticError
 
-from automojo.interop.runpod.exceptions.runpoderrors import (
+from automojo.restclient.runpod.exceptions.runpoderrors import (
     RunpodAuthenticationError, RunpodError
 )
 

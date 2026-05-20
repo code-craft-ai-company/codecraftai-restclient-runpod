@@ -26,7 +26,7 @@ that are well design, cohesive, and easy to use and that provide rapid but stabl
 
 # Project Overview
 
-The `automojo-interop-runpod` package is the venue-specific REST client
+The `automojo-restclient-runpod` package is the venue-specific REST client
 for RunPod, a GPU cloud whose primary unit of provisioning is the
 container *pod* rather than the VM. The provider exposes secure-cloud
 and community-cloud capacity tiers, pod templates, GPU-type and region
@@ -47,10 +47,10 @@ Credentials enter as typed `RunpodApiKeyCredential` instances from
 `automojo-credentials`.
 
 # Testing Conventions
-The 'automojo-interop-runpod' package repository utilizes the 'testbase' framework
+The 'automojo-restclient-runpod' package repository utilizes the 'testbase' framework
 for tests that require live resources, and the 'unittest' framework for isolated
 component tests. Single-host tests live under
-'source/testroots/automojo/tests/singlehost/interop/runpod'.
+'source/testroots/automojo/tests/singlehost/restclient/runpod'.
 
 Property-based tests (hypothesis) are required for paging, URL composition,
 and idempotent retry semantics.

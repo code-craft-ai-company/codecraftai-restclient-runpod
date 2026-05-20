@@ -14,7 +14,7 @@ __credits__ = []
 
 from automojo.credentials.runpodapikeycredential import RunpodApiKeyCredential
 
-from automojo.interop.runpod.runpodclient import RunpodClient
+from automojo.restclient.runpod.runpodclient import RunpodClient
 
 
 TEST_HOST = "rest.runpod.test"

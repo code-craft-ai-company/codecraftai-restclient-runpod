@@ -18,23 +18,23 @@ import requests_mock as rm_module
 
 from automojo.errors.exceptions import SemanticError
 
-from automojo.interop.runpod.aspectsrunpod import AspectsRunpod
-from automojo.interop.runpod.enums.runpodcloudtype import RunpodCloudType
-from automojo.interop.runpod.exceptions.runpoderrors import (
+from automojo.restclient.runpod.aspectsrunpod import AspectsRunpod
+from automojo.restclient.runpod.enums.runpodcloudtype import RunpodCloudType
+from automojo.restclient.runpod.exceptions.runpoderrors import (
     RunpodAcceleratorNotAvailableError, RunpodCapacityUnavailableError,
     RunpodPodFailedError
 )
-from automojo.interop.runpod.specs.runpodpodlaunchspec import (
+from automojo.restclient.runpod.specs.runpodpodlaunchspec import (
     RunpodPodLaunchSpec
 )
-from automojo.interop.runpod.specs.runpodnetworkvolumespec import (
+from automojo.restclient.runpod.specs.runpodnetworkvolumespec import (
     RunpodNetworkVolumeSpec
 )
-from automojo.interop.runpod.specs.runpodpodtemplatespec import (
+from automojo.restclient.runpod.specs.runpodpodtemplatespec import (
     RunpodPodTemplateSpec
 )
 
-from automojo.tests.interop.runpod.testsupport import BASE_URL, make_client
+from automojo.tests.restclient.runpod.testsupport import BASE_URL, make_client
 
 
 _GPU_CATALOG = [

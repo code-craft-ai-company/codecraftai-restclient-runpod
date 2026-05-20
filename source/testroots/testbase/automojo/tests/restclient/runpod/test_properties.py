@@ -22,15 +22,15 @@ from hypothesis import strategies as st
 
 from automojo.errors.exceptions import SemanticError
 
-from automojo.interop.runpod.aspectsrunpod import AspectsRunpod
-from automojo.interop.runpod.apigroups.groupsupport import (
+from automojo.restclient.runpod.aspectsrunpod import AspectsRunpod
+from automojo.restclient.runpod.apigroups.groupsupport import (
     compose_leaf, encode_segment, iter_cursor_pages
 )
-from automojo.interop.runpod.exceptions.runpoderrors import (
+from automojo.restclient.runpod.exceptions.runpoderrors import (
     RunpodPodFailedError
 )
 
-from automojo.tests.interop.runpod.testsupport import BASE_URL, make_client
+from automojo.tests.restclient.runpod.testsupport import BASE_URL, make_client
 
 
 # ----------------------------------------------------------------------
