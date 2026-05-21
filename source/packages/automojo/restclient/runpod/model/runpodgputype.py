@@ -52,6 +52,25 @@ class RunpodGpuType:
             self.community_data_centers = list(community_data_centers)
         return
 
+    def to_dict(self) -> Dict[str, Any]:
+        """
+            Serialize this :class:`RunpodGpuType` to a canonical API payload.
+
+            The emitted keys match the primary key names that
+            :meth:`from_dict` reads, so ``from_dict(to_dict(x))``
+            reconstructs an equal record.
+
+            :returns: A dictionary payload describing this GPU type.
+        """
+        rtnval: Dict[str, Any] = {
+            "id": self.gpu_type_id,
+            "displayName": self.display_name,
+            "memoryInGb": self.memory_gb,
+            "secureDataCenters": list(self.secure_data_centers),
+            "communityDataCenters": list(self.community_data_centers),
+        }
+        return rtnval
+
     @classmethod
     def from_dict(cls, data: Dict[str, Any]) -> "RunpodGpuType":
         """

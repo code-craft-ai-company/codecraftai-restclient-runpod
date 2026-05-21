@@ -46,6 +46,26 @@ class RunpodPodTemplate:
         self.container_start_command = container_start_command
         return
 
+    def to_dict(self) -> Dict[str, Any]:
+        """
+            Serialize this :class:`RunpodPodTemplate` to a canonical API
+            payload.
+
+            The emitted keys match the primary key names that
+            :meth:`from_dict` reads, so ``from_dict(to_dict(x))``
+            reconstructs an equal record.
+
+            :returns: A dictionary payload describing this pod template.
+        """
+        rtnval: Dict[str, Any] = {
+            "id": self.template_id,
+            "name": self.name,
+            "imageName": self.image_name,
+            "containerDiskInGb": self.container_disk_gb,
+            "dockerArgs": self.container_start_command,
+        }
+        return rtnval
+
     @classmethod
     def from_dict(cls, data: Dict[str, Any]) -> "RunpodPodTemplate":
         """

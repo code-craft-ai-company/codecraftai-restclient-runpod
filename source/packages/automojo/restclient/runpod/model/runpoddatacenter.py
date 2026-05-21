@@ -40,6 +40,24 @@ class RunpodDataCenter:
         self.secure_cloud = secure_cloud
         return
 
+    def to_dict(self) -> Dict[str, Any]:
+        """
+            Serialize this :class:`RunpodDataCenter` to a canonical API
+            payload.
+
+            The emitted keys match the primary key names that
+            :meth:`from_dict` reads, so ``from_dict(to_dict(x))``
+            reconstructs an equal record.
+
+            :returns: A dictionary payload describing this data center.
+        """
+        rtnval: Dict[str, Any] = {
+            "id": self.data_center_id,
+            "name": self.name,
+            "secureCloud": self.secure_cloud,
+        }
+        return rtnval
+
     @classmethod
     def from_dict(cls, data: Dict[str, Any]) -> "RunpodDataCenter":
         """
