@@ -141,11 +141,16 @@ def iter_cursor_pages(*, fetch_page: Callable[[Optional[str]], Dict[str, Any]],
             (``None`` on the first call) and returning a page dictionary.
         :param items_field: Name of the field holding the page item list.
         :param cursor_field: Name of the field holding the next-page cursor
-            token (``None`` / absent indicates the final page).
+            token (``None`` / absent / empty-string indicates the final
+            page).
 
         :returns: An iterator over the raw item dictionaries.
+
+        :raises: :class:`RunpodError` when the endpoint returns a cursor
+            token that has already been seen (cursor cycle).
     """
     cursor: Optional[str] = None
+    seen_cursors: List[str] = []
     while True:
         page = fetch_page(cursor)
 
@@ -155,9 +160,21 @@ def iter_cursor_pages(*, fetch_page: Callable[[Optional[str]], Dict[str, Any]],
         for item in items:
             yield item
 
-        cursor = page.get(cursor_field)
-        if cursor is None:
+        next_cursor = page.get(cursor_field)
+        if next_cursor is None:
             break
+        if not isinstance(next_cursor, str):
+            break
+        if len(next_cursor) == 0:
+            break
+        if next_cursor in seen_cursors:
+            err_msg_lines = ["RunPod cursor pagination detected a cursor cycle."]
+            err_msg_lines.append("REPEATED CURSOR: {}".format(next_cursor))
+            err_msg = os.linesep.join(err_msg_lines)
+            raise RunpodError(err_msg)
+
+        seen_cursors.append(next_cursor)
+        cursor = next_cursor
     return
 
 
