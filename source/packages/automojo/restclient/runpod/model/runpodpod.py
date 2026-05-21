@@ -46,6 +46,24 @@ class RunpodPort:
         self.protocol = protocol
         return
 
+    def to_dict(self) -> Dict[str, Any]:
+        """
+            Serialize this :class:`RunpodPort` to a canonical API payload.
+
+            The emitted keys match the primary key names that
+            :meth:`from_dict` reads, so ``from_dict(to_dict(x))``
+            reconstructs an equal record.
+
+            :returns: A dictionary payload describing this port mapping.
+        """
+        rtnval: Dict[str, Any] = {
+            "privatePort": self.private_port,
+            "publicPort": self.public_port,
+            "ip": self.ip,
+            "type": self.protocol,
+        }
+        return rtnval
+
     @classmethod
     def from_dict(cls, data: Dict[str, Any]) -> "RunpodPort":
         """
@@ -134,6 +152,34 @@ class RunpodPod:
             :returns: ``True`` when the desired status is terminal-failed.
         """
         rtnval = self.desired_status in RUNPOD_FAILED_STATUSES
+        return rtnval
+
+    def to_dict(self) -> Dict[str, Any]:
+        """
+            Serialize this :class:`RunpodPod` to a canonical API payload.
+
+            The emitted keys match the primary key names that
+            :meth:`from_dict` reads, so ``from_dict(to_dict(x))``
+            reconstructs an equal record.  Nested port mappings are
+            serialized via :meth:`RunpodPort.to_dict`.
+
+            :returns: A dictionary payload describing this pod.
+        """
+        port_payloads: List[Dict[str, Any]] = []
+        for port in self.ports:
+            port_payloads.append(port.to_dict())
+
+        rtnval: Dict[str, Any] = {
+            "id": self.pod_id,
+            "name": self.name,
+            "desiredStatus": self.desired_status,
+            "gpuTypeId": self.gpu_type_id,
+            "gpuCount": self.gpu_count,
+            "imageName": self.image_name,
+            "publicIp": self.public_ip,
+            "portMappings": port_payloads,
+            "sshEndpoint": self.ssh_endpoint,
+        }
         return rtnval
 
     @classmethod

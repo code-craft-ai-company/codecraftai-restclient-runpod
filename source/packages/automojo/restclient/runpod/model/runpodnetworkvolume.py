@@ -41,6 +41,25 @@ class RunpodNetworkVolume:
         self.data_center_id = data_center_id
         return
 
+    def to_dict(self) -> Dict[str, Any]:
+        """
+            Serialize this :class:`RunpodNetworkVolume` to a canonical API
+            payload.
+
+            The emitted keys match the primary key names that
+            :meth:`from_dict` reads, so ``from_dict(to_dict(x))``
+            reconstructs an equal record.
+
+            :returns: A dictionary payload describing this network volume.
+        """
+        rtnval: Dict[str, Any] = {
+            "id": self.volume_id,
+            "name": self.name,
+            "size": self.size_gb,
+            "dataCenterId": self.data_center_id,
+        }
+        return rtnval
+
     @classmethod
     def from_dict(cls, data: Dict[str, Any]) -> "RunpodNetworkVolume":
         """
