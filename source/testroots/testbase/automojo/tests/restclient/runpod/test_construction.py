@@ -7,24 +7,24 @@
 """
 
 __author__ = "Myron Walker"
-__copyright__ = "Copyright 2026, Automation Mojo LLC"
+__copyright__ = "Copyright 2026, Code Craft AI LLC"
 __credits__ = []
 
 
 import pytest
 import requests_mock as rm_module
 
-from automojo.errors.exceptions import ConfigurationError
+from ccai.errors.exceptions import ConfigurationError
 
-from automojo.credentials.basiccredential import BasicCredential
-from automojo.credentials.runpodapikeycredential import RunpodApiKeyCredential
+from ccai.credentials.basiccredential import BasicCredential
+from ccai.credentials.runpodapikeycredential import RunpodApiKeyCredential
 
-from automojo.restclient.runpod.runpodclient import RunpodClient
-from automojo.restclient.runpod.exceptions.runpoderrors import (
+from ccai.restclient.runpod.runpodclient import RunpodClient
+from ccai.restclient.runpod.exceptions.runpoderrors import (
     RunpodAuthenticationError
 )
 
-from automojo.tests.restclient.runpod.testsupport import (
+from ccai.tests.restclient.runpod.testsupport import (
     BASE_URL, make_client, make_credential
 )
 

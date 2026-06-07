@@ -7,7 +7,7 @@ container-pod GPU cloud. The provisioning unit is the pod (container),
 not a VM. This client exposes GPU type and pod template catalogs,
 persistent (network) volumes, and the pod lifecycle (launch, inspect,
 start, stop, terminate) needed by `venue-runpod` in
-`automojo-provisioning`.
+`codecraftai-provisioning`.
 
 Transport is REST on `RestClientBase`. Authentication uses
 `RunpodApiKeyCredential`. Every behaviour-bearing method accepts

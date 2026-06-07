@@ -13,7 +13,7 @@ to model — RunPod handles networking implicitly.
 
 ```
 ┌────────────────────────────────────────────────────────┐
-│  automojo-provisioning / venues / runpod               │
+│  codecraftai-provisioning / venues / runpod               │
 │  (WorkloadProvisioner lifecycle)                       │
 └──────────┬─────────────────────────────────────────────┘
            │
@@ -52,7 +52,7 @@ Exceptions: `RunpodAuthenticationError`,
 ## Module Layout
 
 ```
-source/packages/automojo/restclient/runpod/
+source/packages/ccai/restclient/runpod/
 ├── runpodclient.py
 ├── aspectsrunpod.py
 ├── apigroups/
@@ -66,9 +66,9 @@ source/packages/automojo/restclient/runpod/
 
 ## See Also
 
-- `automojo-restclient-base/specs/restapigroup-enhancements/`
-- `automojo-provisioning/specs/venue-runpod/`
-- `automojo-credentials/specs/runpod-credentials/`
+- `codecraftai-restclient-base/specs/restapigroup-enhancements/`
+- `codecraftai-provisioning/specs/venue-runpod/`
+- `codecraftai-credentials/specs/runpod-credentials/`
 
 ---
 

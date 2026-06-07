@@ -2,7 +2,7 @@
 
 ## Package Skeleton
 
-- [x] 1. Create `source/packages/automojo/restclient/runpod/` package tree.
+- [x] 1. Create `source/packages/ccai/restclient/runpod/` package tree.
 - [x] 2. Add `aspectsrunpod.py` with `DEFAULT_RUNPOD_ASPECTS`.
 
 ## Client Core

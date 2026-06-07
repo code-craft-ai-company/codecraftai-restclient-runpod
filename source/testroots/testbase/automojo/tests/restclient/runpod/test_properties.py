@@ -10,7 +10,7 @@
 """
 
 __author__ = "Myron Walker"
-__copyright__ = "Copyright 2026, Automation Mojo LLC"
+__copyright__ = "Copyright 2026, Code Craft AI LLC"
 __credits__ = []
 
 
@@ -20,17 +20,17 @@ import requests_mock as rm_module
 from hypothesis import given, settings
 from hypothesis import strategies as st
 
-from automojo.errors.exceptions import SemanticError
+from ccai.errors.exceptions import SemanticError
 
-from automojo.restclient.runpod.aspectsrunpod import AspectsRunpod
-from automojo.restclient.runpod.apigroups.groupsupport import (
+from ccai.restclient.runpod.aspectsrunpod import AspectsRunpod
+from ccai.restclient.runpod.apigroups.groupsupport import (
     compose_leaf, encode_segment, iter_cursor_pages
 )
-from automojo.restclient.runpod.exceptions.runpoderrors import (
+from ccai.restclient.runpod.exceptions.runpoderrors import (
     RunpodPodFailedError
 )
 
-from automojo.tests.restclient.runpod.testsupport import BASE_URL, make_client
+from ccai.tests.restclient.runpod.testsupport import BASE_URL, make_client
 
 
 # ----------------------------------------------------------------------

@@ -8,24 +8,24 @@
 """
 
 __author__ = "Myron Walker"
-__copyright__ = "Copyright 2026, Automation Mojo LLC"
+__copyright__ = "Copyright 2026, Code Craft AI LLC"
 __credits__ = []
 
 
 from typing import Any, Dict, List, Optional
 
-from automojo.errors.exceptions import SemanticError
+from ccai.errors.exceptions import SemanticError
 
-from automojo.restclient.base.restapigroup import RestApiGroup
+from ccai.restclient.base.restapigroup import RestApiGroup
 
-from automojo.restclient.runpod.aspectsrunpod import (
+from ccai.restclient.runpod.aspectsrunpod import (
     AspectsRunpod, DEFAULT_RUNPOD_ASPECTS
 )
-from automojo.restclient.runpod.apigroups.groupsupport import (
+from ccai.restclient.runpod.apigroups.groupsupport import (
     iter_cursor_pages, raise_for_status, safe_json
 )
-from automojo.restclient.runpod.model.runpodpodtemplate import RunpodPodTemplate
-from automojo.restclient.runpod.specs.runpodpodtemplatespec import (
+from ccai.restclient.runpod.model.runpodpodtemplate import RunpodPodTemplate
+from ccai.restclient.runpod.specs.runpodpodtemplatespec import (
     RunpodPodTemplateSpec
 )
 
