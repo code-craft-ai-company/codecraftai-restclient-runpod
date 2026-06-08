@@ -8,15 +8,15 @@
 """
 
 __author__ = "Myron Walker"
-__copyright__ = "Copyright 2026, Automation Mojo LLC"
+__copyright__ = "Copyright 2026, Code Craft AI LLC"
 __credits__ = []
 
 
 from typing import Any, Dict, List, Optional, Union
 
-from automojo.errors.exceptions import SemanticError
+from ccai.errors.exceptions import SemanticError
 
-from automojo.restclient.runpod.enums.runpodcloudtype import RunpodCloudType
+from ccai.restclient.runpod.enums.runpodcloudtype import RunpodCloudType
 
 
 class RunpodPodLaunchSpec:

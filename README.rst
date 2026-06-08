@@ -1,8 +1,8 @@
 =========================================
-Automation Mojo Rest Client - RunPod
+Code Craft AI Rest Client - RunPod
 =========================================
 
-The ``automojo-restclient-runpod`` package is the venue-specific REST client for RunPod, a
+The ``codecraftai-restclient-runpod`` package is the venue-specific REST client for RunPod, a
 GPU cloud whose primary unit of provisioning is the container *pod* rather than the VM.
 The provider exposes secure-cloud and community-cloud capacity tiers, pod templates,
 GPU-type and region catalogs, persistent network volumes, and a small lifecycle surface
@@ -16,15 +16,15 @@ Highlights
 - Network-volume lifecycle — create, inspect, and delete persistent network volumes.
 - Pod lifecycle — launch, inspect, stop, start, and terminate container pods across secure-cloud and community-cloud tiers.
 - Scope boundary — multi-node training shapes are out of scope at the client level; the provisioner composes per-pod calls to express them.
-- Aspects-driven transport — every behaviour-bearing call accepts ``aspects: AspectsRest = DEFAULT_RUNPOD_ASPECTS``; credentials enter as typed ``RunpodApiKeyCredential`` instances from ``automojo-credentials``.
+- Aspects-driven transport — every behaviour-bearing call accepts ``aspects: AspectsRest = DEFAULT_RUNPOD_ASPECTS``; credentials enter as typed ``RunpodApiKeyCredential`` instances from ``codecraftai-credentials``.
 
 Repository Structure
 ====================
 
 - ``development/`` - Runtime environment scripts.
 - ``repository-setup/`` - Repository homing and setup scripts.
-- ``source/packages/automojo/restclient/runpod/`` - Package source code.
-- ``source/testroots/testbase/automojo/tests/restclient/runpod/`` - TestBase test roots.
+- ``source/packages/ccai/restclient/runpod/`` - Package source code.
+- ``source/testroots/testbase/ccai/tests/restclient/runpod/`` - TestBase test roots.
 - ``specs/`` - Requirements, design, and task documentation (Kiro-style).
 - ``userguide/`` - Standards, conventions, and documentation.
 

@@ -8,7 +8,7 @@
 """
 
 __author__ = "Myron Walker"
-__copyright__ = "Copyright 2026, Automation Mojo LLC"
+__copyright__ = "Copyright 2026, Code Craft AI LLC"
 __credits__ = []
 
 
@@ -18,7 +18,7 @@ import logging
 
 from requests import Session
 
-from automojo.restclient.base.aspectsrest import (
+from ccai.restclient.base.aspectsrest import (
     ActionPattern, AspectsRest, LoggingPattern,
     DEFAULT_COMPLETION_TIMEOUT, DEFAULT_COMPLETION_INTERVAL,
     DEFAULT_CONNECTION_TIMEOUT, DEFAULT_INACTIVITY_TIMEOUT,

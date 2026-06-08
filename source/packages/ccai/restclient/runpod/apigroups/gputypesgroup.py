@@ -8,19 +8,19 @@
 """
 
 __author__ = "Myron Walker"
-__copyright__ = "Copyright 2026, Automation Mojo LLC"
+__copyright__ = "Copyright 2026, Code Craft AI LLC"
 __credits__ = []
 
 
 from typing import Any, Dict, List
 
-from automojo.restclient.base.restapigroup import RestApiGroup
+from ccai.restclient.base.restapigroup import RestApiGroup
 
-from automojo.restclient.runpod.aspectsrunpod import (
+from ccai.restclient.runpod.aspectsrunpod import (
     AspectsRunpod, DEFAULT_RUNPOD_ASPECTS
 )
-from automojo.restclient.runpod.apigroups.groupsupport import raise_for_status
-from automojo.restclient.runpod.model.runpodgputype import RunpodGpuType
+from ccai.restclient.runpod.apigroups.groupsupport import raise_for_status
+from ccai.restclient.runpod.model.runpodgputype import RunpodGpuType
 
 
 class GpuTypesGroup(RestApiGroup):

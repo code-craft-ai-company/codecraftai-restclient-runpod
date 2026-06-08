@@ -8,7 +8,7 @@
 """
 
 __author__ = "Myron Walker"
-__copyright__ = "Copyright 2026, Automation Mojo LLC"
+__copyright__ = "Copyright 2026, Code Craft AI LLC"
 __credits__ = []
 
 
@@ -20,45 +20,45 @@ from typing import Any, Dict, List, Optional, Union
 
 from requests import Response, Session
 
-from automojo.errors.exceptions import ConfigurationError, SemanticError
+from ccai.errors.exceptions import ConfigurationError, SemanticError
 
-from automojo.credentials.basecredential import BaseCredential
-from automojo.credentials.runpodapikeycredential import RunpodApiKeyCredential
+from ccai.credentials.basecredential import BaseCredential
+from ccai.credentials.runpodapikeycredential import RunpodApiKeyCredential
 
-from automojo.restclient.base.restclientbase import RestClientBase
+from ccai.restclient.base.restclientbase import RestClientBase
 
-from automojo.restclient.runpod.aspectsrunpod import (
+from ccai.restclient.runpod.aspectsrunpod import (
     AspectsRunpod, DEFAULT_RUNPOD_ASPECTS
 )
-from automojo.restclient.runpod.apigroups.gputypesgroup import GpuTypesGroup
-from automojo.restclient.runpod.apigroups.datacentersgroup import DataCentersGroup
-from automojo.restclient.runpod.apigroups.podtemplatesgroup import (
+from ccai.restclient.runpod.apigroups.gputypesgroup import GpuTypesGroup
+from ccai.restclient.runpod.apigroups.datacentersgroup import DataCentersGroup
+from ccai.restclient.runpod.apigroups.podtemplatesgroup import (
     PodTemplatesGroup
 )
-from automojo.restclient.runpod.apigroups.networkvolumesgroup import (
+from ccai.restclient.runpod.apigroups.networkvolumesgroup import (
     NetworkVolumesGroup
 )
-from automojo.restclient.runpod.apigroups.podsgroup import PodsGroup
-from automojo.restclient.runpod.apigroups.tagsgroup import TagsGroup
-from automojo.restclient.runpod.exceptions.runpoderrors import (
+from ccai.restclient.runpod.apigroups.podsgroup import PodsGroup
+from ccai.restclient.runpod.apigroups.tagsgroup import TagsGroup
+from ccai.restclient.runpod.exceptions.runpoderrors import (
     RunpodAcceleratorNotAvailableError, RunpodCapacityUnavailableError,
     RunpodPodFailedError
 )
-from automojo.restclient.runpod.enums.runpodcloudtype import RunpodCloudType
-from automojo.restclient.runpod.model.runpodgputype import RunpodGpuType
-from automojo.restclient.runpod.model.runpoddatacenter import RunpodDataCenter
-from automojo.restclient.runpod.model.runpodpodtemplate import RunpodPodTemplate
-from automojo.restclient.runpod.model.runpodnetworkvolume import (
+from ccai.restclient.runpod.enums.runpodcloudtype import RunpodCloudType
+from ccai.restclient.runpod.model.runpodgputype import RunpodGpuType
+from ccai.restclient.runpod.model.runpoddatacenter import RunpodDataCenter
+from ccai.restclient.runpod.model.runpodpodtemplate import RunpodPodTemplate
+from ccai.restclient.runpod.model.runpodnetworkvolume import (
     RunpodNetworkVolume
 )
-from automojo.restclient.runpod.model.runpodpod import RunpodPod
-from automojo.restclient.runpod.specs.runpodpodtemplatespec import (
+from ccai.restclient.runpod.model.runpodpod import RunpodPod
+from ccai.restclient.runpod.specs.runpodpodtemplatespec import (
     RunpodPodTemplateSpec
 )
-from automojo.restclient.runpod.specs.runpodnetworkvolumespec import (
+from ccai.restclient.runpod.specs.runpodnetworkvolumespec import (
     RunpodNetworkVolumeSpec
 )
-from automojo.restclient.runpod.specs.runpodpodlaunchspec import (
+from ccai.restclient.runpod.specs.runpodpodlaunchspec import (
     RunpodPodLaunchSpec
 )
 

@@ -9,7 +9,7 @@
 """
 
 __author__ = "Myron Walker"
-__copyright__ = "Copyright 2026, Automation Mojo LLC"
+__copyright__ = "Copyright 2026, Code Craft AI LLC"
 __credits__ = []
 
 
@@ -20,9 +20,9 @@ from urllib.parse import quote
 
 from requests import Response
 
-from automojo.errors.exceptions import SemanticError
+from ccai.errors.exceptions import SemanticError
 
-from automojo.restclient.runpod.exceptions.runpoderrors import (
+from ccai.restclient.runpod.exceptions.runpoderrors import (
     RunpodAuthenticationError, RunpodError
 )
 

@@ -9,19 +9,19 @@
 """
 
 __author__ = "Myron Walker"
-__copyright__ = "Copyright 2026, Automation Mojo LLC"
+__copyright__ = "Copyright 2026, Code Craft AI LLC"
 __credits__ = []
 
 
-from automojo.restclient.runpod.model.runpoddatacenter import (
+from ccai.restclient.runpod.model.runpoddatacenter import (
     RunpodDataCenter
 )
-from automojo.restclient.runpod.model.runpodgputype import RunpodGpuType
-from automojo.restclient.runpod.model.runpodnetworkvolume import (
+from ccai.restclient.runpod.model.runpodgputype import RunpodGpuType
+from ccai.restclient.runpod.model.runpodnetworkvolume import (
     RunpodNetworkVolume
 )
-from automojo.restclient.runpod.model.runpodpod import RunpodPod, RunpodPort
-from automojo.restclient.runpod.model.runpodpodtemplate import (
+from ccai.restclient.runpod.model.runpodpod import RunpodPod, RunpodPort
+from ccai.restclient.runpod.model.runpodpodtemplate import (
     RunpodPodTemplate
 )
 
