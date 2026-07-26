@@ -17,8 +17,8 @@ __credits__ = []
 import pytest
 import requests_mock as rm_module
 
-from hypothesis import given, settings
-from hypothesis import strategies as st
+from ccai.testbase.properties import given
+from ccai.testbase.properties import strategies as st
 
 from ccai.errors.exceptions import SemanticError
 
@@ -37,8 +37,8 @@ from ccai.tests.restclient.runpod.testsupport import BASE_URL, make_client
 # Paging cursor traversal totality
 # ----------------------------------------------------------------------
 
-@settings(max_examples=60, deadline=None)
-@given(page_sizes=st.lists(st.integers(min_value=0, max_value=8),
+@given(
+    constraints={"max_examples": 60},page_sizes=st.lists(st.integers(min_value=0, max_value=8),
                            min_size=1, max_size=6))
 def test_paging_traversal_yields_every_item(page_sizes):
     """
@@ -68,8 +68,7 @@ def test_paging_traversal_yields_every_item(page_sizes):
     assert [entry["id"] for entry in collected] == expected
 
 
-@settings(max_examples=40, deadline=None)
-@given(total=st.integers(min_value=0, max_value=25))
+@given(total=st.integers(min_value=0, max_value=25), constraints={"max_examples": 40})
 def test_list_pods_paging_totality_over_http(total):
     """
         ``list_pods`` follows cursors transparently and returns every pod.
@@ -104,8 +103,8 @@ def test_list_pods_paging_totality_over_http(total):
 # URL composition
 # ----------------------------------------------------------------------
 
-@settings(max_examples=80, deadline=None)
-@given(segments=st.lists(st.text(min_size=1, max_size=12),
+@given(
+    constraints={"max_examples": 80},segments=st.lists(st.text(min_size=1, max_size=12),
                          min_size=1, max_size=4))
 def test_compose_leaf_is_deterministic(segments):
     """
@@ -116,8 +115,7 @@ def test_compose_leaf_is_deterministic(segments):
     assert first == second
 
 
-@settings(max_examples=80, deadline=None)
-@given(segment=st.text(min_size=1, max_size=20))
+@given(segment=st.text(min_size=1, max_size=20), constraints={"max_examples": 80})
 def test_encode_segment_is_per_segment_safe(segment):
     """
         Per-segment encoding never emits a raw path separator.
@@ -149,8 +147,8 @@ def test_compose_leaf_rejects_none_segment():
 _NON_TERMINAL = ("PENDING", "CREATED", "PROVISIONING")
 
 
-@settings(max_examples=40, deadline=None)
-@given(prefix=st.lists(st.sampled_from(_NON_TERMINAL),
+@given(
+    constraints={"max_examples": 40},prefix=st.lists(st.sampled_from(_NON_TERMINAL),
                        min_size=0, max_size=5),
        terminal=st.sampled_from(("RUNNING", "FAILED")))
 def test_waiter_resolves_to_first_terminal_state(prefix, terminal):
