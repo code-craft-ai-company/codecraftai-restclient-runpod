@@ -13,7 +13,9 @@ __copyright__ = "Copyright 2026, Code Craft AI LLC"
 __credits__ = []
 
 
-import pytest
+from ccai import testbase
+
+
 import requests_mock as rm_module
 
 from ccai.errors.exceptions import SemanticError
@@ -158,7 +160,7 @@ def test_launch_pod_unavailable_gpu_raises():
                                template_id="t-1")
     with rm_module.Mocker() as mock:
         mock.get("{}/v1/gpuTypes".format(BASE_URL), json=_GPU_CATALOG)
-        with pytest.raises(RunpodAcceleratorNotAvailableError):
+        with testbase.raises(RunpodAcceleratorNotAvailableError):
             client.launch_pod(spec=spec)
 
 
@@ -173,7 +175,7 @@ def test_launch_pod_secure_capacity_unavailable_raises():
                                cloud_type=RunpodCloudType.SECURE)
     with rm_module.Mocker() as mock:
         mock.get("{}/v1/gpuTypes".format(BASE_URL), json=_GPU_CATALOG)
-        with pytest.raises(RunpodCapacityUnavailableError):
+        with testbase.raises(RunpodCapacityUnavailableError):
             client.launch_pod(spec=spec)
 
 
@@ -198,7 +200,7 @@ def test_launch_spec_rejects_bad_cloud_type():
     """
         An unrecognised cloud_type raises SemanticError at spec construction.
     """
-    with pytest.raises(SemanticError):
+    with testbase.raises(SemanticError):
         RunpodPodLaunchSpec(name="p", gpu_type_id="g", cloud_type="HYBRID")
 
 
@@ -247,7 +249,7 @@ def test_apply_tags_rejects_bad_resource_type():
         SemanticError.
     """
     client = make_client()
-    with pytest.raises(SemanticError):
+    with testbase.raises(SemanticError):
         client.apply_tags(resource_type="widgets", resource_id="x",
                           tags={})
 
@@ -277,7 +279,7 @@ def test_wait_until_running_raises_on_failed_state():
     with rm_module.Mocker() as mock:
         mock.get("{}/v1/pods/pod-1".format(BASE_URL),
                  json={"id": "pod-1", "desiredStatus": "FAILED"})
-        with pytest.raises(RunpodPodFailedError):
+        with testbase.raises(RunpodPodFailedError):
             client.wait_until_running(pod_id="pod-1", aspects=aspects)
 
 
@@ -291,5 +293,5 @@ def test_wait_until_running_times_out():
     with rm_module.Mocker() as mock:
         mock.get("{}/v1/pods/pod-1".format(BASE_URL),
                  json={"id": "pod-1", "desiredStatus": "PENDING"})
-        with pytest.raises(TimeoutError):
+        with testbase.raises(TimeoutError):
             client.wait_until_running(pod_id="pod-1", aspects=aspects)

@@ -14,7 +14,9 @@ __copyright__ = "Copyright 2026, Code Craft AI LLC"
 __credits__ = []
 
 
-import pytest
+from ccai import testbase
+
+
 import requests_mock as rm_module
 
 from ccai.testbase.properties import given
@@ -128,7 +130,7 @@ def test_compose_leaf_rejects_empty_segment():
     """
         An empty path segment is rejected with SemanticError.
     """
-    with pytest.raises(SemanticError):
+    with testbase.raises(SemanticError):
         compose_leaf(base="/v1", parts=["pods", ""])
 
 
@@ -136,7 +138,7 @@ def test_compose_leaf_rejects_none_segment():
     """
         A ``None`` path segment is rejected with SemanticError.
     """
-    with pytest.raises(SemanticError):
+    with testbase.raises(SemanticError):
         compose_leaf(base="/v1", parts=["pods", None])
 
 
@@ -171,5 +173,5 @@ def test_waiter_resolves_to_first_terminal_state(prefix, terminal):
             pod = client.wait_until_running(pod_id="pod-1", aspects=aspects)
             assert pod.is_running is True
         else:
-            with pytest.raises(RunpodPodFailedError):
+            with testbase.raises(RunpodPodFailedError):
                 client.wait_until_running(pod_id="pod-1", aspects=aspects)

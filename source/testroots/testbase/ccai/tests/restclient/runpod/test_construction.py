@@ -11,7 +11,9 @@ __copyright__ = "Copyright 2026, Code Craft AI LLC"
 __credits__ = []
 
 
-import pytest
+from ccai import testbase
+
+
 import requests_mock as rm_module
 
 from ccai.errors.exceptions import ConfigurationError
@@ -49,7 +51,7 @@ def test_construction_rejects_wrong_credential_type():
     """
     wrong = BasicCredential(identifier="b", categories=["basic"],
                             username="u", password="p")
-    with pytest.raises(ConfigurationError):
+    with testbase.raises(ConfigurationError):
         RunpodClient(credential=wrong)
 
 
@@ -73,7 +75,7 @@ def test_http_401_reclassifies_to_authentication_error():
     with rm_module.Mocker() as mock:
         mock.get("{}/v1/gpuTypes".format(BASE_URL), status_code=401,
                  text="unauthorized")
-        with pytest.raises(RunpodAuthenticationError):
+        with testbase.raises(RunpodAuthenticationError):
             client.list_gpu_types()
 
 
@@ -85,5 +87,5 @@ def test_http_403_reclassifies_to_authentication_error():
     with rm_module.Mocker() as mock:
         mock.get("{}/v1/gpuTypes".format(BASE_URL), status_code=403,
                  text="forbidden")
-        with pytest.raises(RunpodAuthenticationError):
+        with testbase.raises(RunpodAuthenticationError):
             client.list_gpu_types()

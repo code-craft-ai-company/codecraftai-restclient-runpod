@@ -14,7 +14,8 @@ __copyright__ = "Copyright 2026, Code Craft AI LLC"
 __credits__ = []
 
 
-import pytest
+from ccai import testbase
+
 
 from typing import Any, Dict, List, Optional
 
@@ -76,6 +77,6 @@ def test_iter_cursor_pages_raises_on_cursor_cycle():
         page = {"items": [{"id": "x"}], "next": "stuck"}
         return page
 
-    with pytest.raises(RunpodError):
+    with testbase.raises(RunpodError):
         list(iter_cursor_pages(fetch_page=fetch_page))
     return
