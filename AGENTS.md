@@ -50,7 +50,7 @@ Credentials enter as typed `RunpodApiKeyCredential` instances from
 The 'codecraftai-restclient-runpod' package repository utilizes the 'testbase' framework
 for tests that require live resources, and the 'unittest' framework for isolated
 component tests. Single-host tests live under
-'source/testroots/ccai/tests/singlehost/restclient/runpod'.
+'source/testroots/testbase/ccai/tests/restclient/runpod'.
 
 Property-based tests (`ccai.testbase.properties`, NOT hypothesis) are required for paging, URL composition,
 and idempotent retry semantics.
