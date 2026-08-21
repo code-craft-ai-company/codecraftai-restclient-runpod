@@ -26,7 +26,7 @@ from ccai.restclient.runpod.exceptions.runpoderrors import (
     RunpodAuthenticationError
 )
 
-from ccai.tests.restclient.runpod.testsupport import (
+from .testsupport import (
     BASE_URL, make_client, make_credential
 )
 

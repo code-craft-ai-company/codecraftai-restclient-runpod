@@ -32,7 +32,7 @@ from ccai.restclient.runpod.exceptions.runpoderrors import (
     RunpodPodFailedError
 )
 
-from ccai.tests.restclient.runpod.testsupport import BASE_URL, make_client
+from .testsupport import BASE_URL, make_client
 
 
 # ----------------------------------------------------------------------

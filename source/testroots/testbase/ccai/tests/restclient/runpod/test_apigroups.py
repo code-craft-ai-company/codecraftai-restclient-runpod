@@ -36,7 +36,7 @@ from ccai.restclient.runpod.specs.runpodpodtemplatespec import (
     RunpodPodTemplateSpec
 )
 
-from ccai.tests.restclient.runpod.testsupport import BASE_URL, make_client
+from .testsupport import BASE_URL, make_client
 
 
 _GPU_CATALOG = [
