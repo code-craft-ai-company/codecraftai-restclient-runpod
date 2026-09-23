@@ -19,7 +19,6 @@ import requests_mock as rm_module
 from ccai.errors.exceptions import ConfigurationError
 
 from ccai.credentials.basiccredential import BasicCredential
-from ccai.credentials.runpodapikeycredential import RunpodApiKeyCredential
 
 from ccai.restclient.runpod.runpodclient import RunpodClient
 from ccai.restclient.runpod.exceptions.runpoderrors import (
